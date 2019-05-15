@@ -1,29 +1,73 @@
-<p id="notice"><%= notice %></p>
+<head>
+  <style type="text/css">.turbolinks-progress-bar {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #0076ff;
+    z-index: 9999;
+    transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+    transform: translate3d(0, 0, 0);
+  }
+  </style>
+</head>
+  <body>
+    <div class="map" style="background-image: url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200')"></div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @flat.name %>
-</p>
+    <div class="container margin-top-negative">
+      <div class="row">
+        <div class="col-8">
+          <div class="flat-show-card">
+            <h1><%= @flat.name %></h1>
+            <p class="flat-show-address"><%= @flat.address %></p>
+          </div>
+          <div class="flat-show-card">
+            <h3>A bit more about this flat...</h3>
+            <p><%= @flat.description %></p>
+          <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=5 Queensmill Road London SW6 6JP&amp;zoom=13&amp;scale=2&amp;size=1000x1000&amp;maptype=roadmap&amp;markers=color:red%7C5 Queensmill Road London SW6 6JP&amp;key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
+      </div>
+    </div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @flat.address %>
-</p>
+    <div class="col-4">
+      <div class="flat-show-card">
+        <h5>Book this place!</h5>
 
-<p>
-  <strong>Description:</strong>
-  <%= @flat.description %>
-</p>
+        <form action="">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">From:</span>
+            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">To:</span>
+            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+        </form>
+      </div>
+      <div class="flat-show-card">
+        <h3>Details</h3>
+        <div class="flex">
+          <div class="flex">
+            <i class="fas fa-user-friends icons"></i><span><%= @flat.numbr_of_guests %></span>
+          </div>
+          <div class="flex ml-3">
+            <i class="fas fa-euro-sign icons"></i> <%= @flat.price_per_night %>
+          </div>
+        </div>
+      </div>
+      <div class="flat-show-card">
+        <div class="flex-align">
+          <h6 class="no-mb">Share</h6>
 
-<p>
-  <strong>Price per night:</strong>
-  <%= @flat.price_per_night %>
-</p>
-
-<p>
-  <strong>Numbr of guests:</strong>
-  <%= @flat.numbr_of_guests %>
-</p>
-
-<%= link_to 'Edit', edit_flat_path(@flat) %> |
-<%= link_to 'Back', flats_path %>
+          <div class="flex">
+            <i class="fab fa-facebook-square fa-2x mr-2"></i>
+            <i class="fab fa-twitter-square fa-2x mr-2"></i>
+            <i class="fab fa-pinterest-square fa-2x mr-2"></i>
+            <i class="fa fa-envelope-square fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
